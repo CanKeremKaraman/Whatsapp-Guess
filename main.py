@@ -106,7 +106,7 @@ def MessagesCountList():
         parsed = ParseChatLine(line)
         if parsed:
             _, user, _ = parsed
-            if user != "Metat AI":
+            if user != "Meta AI":
                 UserMessageCount[user] += 1
 
     return UserMessageCount
