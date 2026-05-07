@@ -169,3 +169,7 @@ Uploads/
 _chat.txt
 whatsapp_export.txt
 
+
+# IDE settings
+.idea/
+
