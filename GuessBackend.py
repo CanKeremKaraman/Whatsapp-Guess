@@ -1,4 +1,4 @@
-from fastapi import FastAPI, File, UploadFile
+from fastapi import FastAPI, File, UploadFile, Query
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import shutil
@@ -28,13 +28,24 @@ async def root():
     return {"message": "Legalize Nucleer Bombs - Backend is running!"}
 
 @app.get("/message", response_model=MessageData)
-async def GetMessage():
-    data = GetRandomMessage()
+async def GetMessage(
+    merge: bool = True,
+    min_words: int = Query(MIN_MESSAGE_WORDS, ge=0, le=30),
+    merge_window: int = Query(MERGE_WINDOW_MINUTES, ge=0, le=60),
+    balance_users: bool = False,
+):
+    data = GetRandomMessage(
+        merge_window_minutes=merge_window,
+        min_words=min_words,
+        merge_bursts=merge,
+        balance_users=balance_users,
+    )
 
     image_file = ExtractMediaFilename(data["message"])
+    message_text = NormalizeMessageForDisplay(data["message"])
     if image_file:
         return MessageData(
-            message="[Image Context / No Text]",
+            message=message_text,
             user=data["user"],
             time=data["time"],
             image=f"/media/{image_file}"
@@ -42,7 +53,7 @@ async def GetMessage():
 
     # If it is just a normal text message
     return MessageData(
-        message=data["message"],
+        message=message_text,
         user=data["user"],
         time=data["time"]
     )

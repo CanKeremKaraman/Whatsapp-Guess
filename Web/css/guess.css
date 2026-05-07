@@ -6,6 +6,7 @@ body {
   font-family: 'Times New Roman', Times, serif;
   background-color: #333;
   color: aliceblue;
+  text-align: center;
   }
 
 
@@ -13,38 +14,77 @@ body {
     font-size: 24px;
     font-weight: bold;
     color: aliceblue;
-    margin: 170px 100px 5px 100px;
+  margin: 170px auto 5px;
+  max-width: 800px;
+  padding: 0 24px;
+  text-align: center;
+  white-space: pre-wrap;
 }
 
 #time {
     font-size: 18px;
-    color: #aaa;
-    margin: 0 100px 0 100px;
+    color: #aaa;s
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 0 24px;
+  text-align: center;
 }
 
 #messageArea {
   width: 100%;
   height: auto;
+  text-align: center;
 }
 
 button {
-  margin: 20px;
+  margin: 0;
+  padding: 8px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.06);
+  color: aliceblue;
+  backdrop-filter: blur(2px);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
 }
 
 #optionArea {
-  margin-bottom: 50px;
-  margin-right: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin: 0 0 50px;
+}
+
+#controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin: 8px 0 20px;
+}
+
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #cbd2d9;
+}
+
+.toggle input {
+  accent-color: #6ab0ff;
 }
 
 button:hover {
   color: #fff;
-  background-color: steelblue;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(70, 130, 180, 0.4);
-  transition: all 0.2s ease-in-out;
+  background-color: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.45);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
 }
 
 .optionButton {
-  margin: 10px;
-  padding-block: 10px;
+  margin: 0;
+  min-height: 38px;
 }

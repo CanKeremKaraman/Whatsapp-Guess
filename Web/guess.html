@@ -10,6 +10,10 @@
     <h1>Welcome to Whatsapp Guess!</h1>
 
     <div id="messageArea">
+      <img id="messageImage" src="" alt="WhatsApp Media" style="display: none; max-width: 400px; border-radius: 10px;" />
+      <audio id="messageAudio" controls style="display: none;">
+        <source src="" type="audio/mp3">
+      </audio>
       <p id="message">
         This is where the message will be displayed after you click the "Get
         Message" button. The game will randomly select a message from your
@@ -18,6 +22,21 @@
       </p>
     </div>
     <p id="time">Time will be displayed here</p>
+
+    <div id="controls">
+      <label class="toggle" title="Merge consecutive messages from the same user in a short window">
+        <input type="checkbox" id="mergeBursts" checked />
+        Merge short bursts
+      </label>
+      <label class="toggle" title="Filter short text messages">
+        <input type="checkbox" id="filterShort" checked />
+        Filter short messages
+      </label>
+      <label class="toggle" title="Give each user an equal chance to be selected">
+        <input type="checkbox" id="balanceUsers" checked />
+        Balance users
+      </label>
+    </div>
 
     <p>The correct answer answer will be seen here</p>
 
