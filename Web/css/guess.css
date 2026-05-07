@@ -1,0 +1,50 @@
+body {
+  justify-content: center;
+  align-items: center;
+  display: grid;
+  place-items: center;
+  font-family: 'Times New Roman', Times, serif;
+  background-color: #333;
+  color: aliceblue;
+  }
+
+
+#message {
+    font-size: 24px;
+    font-weight: bold;
+    color: aliceblue;
+    margin: 170px 100px 5px 100px;
+}
+
+#time {
+    font-size: 18px;
+    color: #aaa;
+    margin: 0 100px 0 100px;
+}
+
+#messageArea {
+  width: 100%;
+  height: auto;
+}
+
+button {
+  margin: 20px;
+}
+
+#optionArea {
+  margin-bottom: 50px;
+  margin-right: 20px;
+}
+
+button:hover {
+  color: #fff;
+  background-color: steelblue;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(70, 130, 180, 0.4);
+  transition: all 0.2s ease-in-out;
+}
+
+.optionButton {
+  margin: 10px;
+  padding-block: 10px;
+}

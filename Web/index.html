@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Whatsapp Guess</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <h1>Whatsapp Guess</h1>
+    <h2>Lets Start With the Whatsapp Export</h2>
+    <p>
+      To start with the game, you need to export your whatsapp chat. To do that,
+      follow the steps below:
+    </p>
+    <ol>
+      <li>Open the Whatsapp chat you want to export.</li>
+      <li>Tap on the three dots in the top right corner.</li>
+      <li>Select "More" from the dropdown menu.</li>
+      <li>Tap on "Export chat".</li>
+      <li>Choose whether to include media or not.(Optional)</li>
+      <li>Save the exported file to your device.</li>
+    </ol>
+    <p>
+      Please don't change the name of the exported file and upload it below:
+    </p>
+    <form id="UploadFile">
+      <input
+        name="file"
+        type="file"
+        id="FileInput"
+        accept=".txt,.zip"
+        required
+      />
+      <button id="UploadButton" type="submit">Upload File</button>
+      <p id="UploadStatus"></p>
+    </form>
+    <p>Deletes the Upload Folder. For a fresh start.</p>
+    <button id="ResetButton">Reset Upload</button>
+    <p id="ResetStatus"></p>
+
+    <button hidden id="StartButton">Start Game</button>
+    <script src="js/script.js"></script>
+  </body>
+</html>

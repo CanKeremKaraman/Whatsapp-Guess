@@ -1,0 +1,9 @@
+{
+  "ignore": [
+    "Uploads/*",
+    "Uploads",
+    "**/*.opus",
+    "**/*.py",
+    "Backend/*"
+  ]
+}
