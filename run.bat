@@ -4,12 +4,25 @@ echo     WhatsApp Guess Game - Backend Launcher
 echo ===================================================
 echo.
 
-:: Check if the virtual environment exists and activate it
+:: Ensure virtual environment exists
+if not exist ".venv\Scripts\activate.bat" (
+    echo [INFO] Creating virtual environment...
+    python -m venv .venv
+)
+
+:: Activate virtual environment
 if exist ".venv\Scripts\activate.bat" (
     echo [INFO] Activating virtual environment...
     call ".venv\Scripts\activate.bat"
 ) else (
     echo [WARNING] No .venv folder found. Running globally...
+)
+
+:: Install dependencies if requirements.txt exists
+if exist "requirements.txt" (
+    echo [INFO] Installing dependencies...
+    python -m pip install --upgrade pip
+    python -m pip install -r requirements.txt
 )
 
 echo [INFO] Starting FastAPI server...

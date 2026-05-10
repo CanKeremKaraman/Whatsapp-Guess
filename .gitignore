@@ -169,6 +169,9 @@ Uploads/
 _chat.txt
 whatsapp_export.txt
 
+# Portable Python (optional)
+python/
+
 
 # IDE settings
 .idea/

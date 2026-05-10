@@ -1,5 +1,6 @@
 import random
 import re
+import shutil
 import zipfile
 from datetime import datetime, timedelta
 from pathlib import Path
@@ -319,8 +320,15 @@ def GetUserNames():
 def ExtractZipFile(FilePath):
     upload_dir = UPLOAD_DIR
     upload_dir.mkdir(parents=True, exist_ok=True)
-    with zipfile.ZipFile(FilePath, "r") as zipref:
-        zipref.extractall(upload_dir)
+
+    zip_path = Path(FilePath)
+    extract_dir = upload_dir / zip_path.stem
+    if extract_dir.exists():
+        shutil.rmtree(extract_dir)
+    extract_dir.mkdir(parents=True, exist_ok=True)
+
+    with zipfile.ZipFile(zip_path, "r") as zipref:
+        zipref.extractall(extract_dir)
 
 
 def MessagesCountList():

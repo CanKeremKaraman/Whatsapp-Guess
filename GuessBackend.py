@@ -61,7 +61,7 @@ async def GetMessage(
 @app.post("/upload")
 async def UploadFiles(file: UploadFile = File(...)):
     # This endpoint receives the file from the frontend and saves it
-    upload_dir = Path("Uploads")
+    upload_dir = UPLOAD_DIR
     upload_dir.mkdir(parents=True, exist_ok=True)
     file_location = upload_dir / file.filename
     with open(file_location, "wb") as buffer:

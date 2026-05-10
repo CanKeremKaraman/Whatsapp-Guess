@@ -15,13 +15,15 @@ A fun "Who said it?" trivia game backend built with FastAPI. Upload your exporte
 
 1. **Clone the repository**
 2. **Install the dependencies:**
-   Make sure you have Python installed, then install the required packages:
-   ```bash
-   pip install fastapi uvicorn pydantic python-multipart
-   ```
+   Make sure you have Python installed. You can either:
+   - Double-click **`run.bat`** (it creates a `.venv` and installs `requirements.txt` automatically), or
+   - Install manually:
+     ```bash
+     pip install -r requirements.txt
+     ```
 3. **Run the game:**
-   The easiest way to start the game on Windows is to simply double-click the **`run.bat`** file. 
-   - This automatically activates the virtual environment, starts the FastAPI server, and launches the frontend `Web\index.html` in your default browser.
+   The easiest way to start the game on Windows is to simply double-click the **`run.bat`** file.
+   - This creates/activates the virtual environment, installs dependencies, starts the FastAPI server, and launches the frontend `Web\index.html` in your default browser.
    
    *(Alternatively, run `uvicorn GuessBackend:app --reload --host 0.0.0.0 --port 8000` via terminal and open `Web\index.html` manually).*
 
